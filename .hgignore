@@ -1,0 +1,5 @@
+
+syntax: glob
+WaveGhost/obj/Release/build.force
+Task1/bin/Debug/Task1.vshost.exe-1245d070
+WaveGhost/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

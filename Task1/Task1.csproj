@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{832896D3-6F2B-407B-AC67-B6826B624E78}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Task1</RootNamespace>
+    <AssemblyName>Task1</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BuildWaveGhost|AnyCPU'">
+    <OutputPath>bin\BuildWaveGhost\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Task1Key2.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=7.1.3000.2254, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReSharper.Annotations.7.1.3.130415\lib\net\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ControlsIO\ControlsLoader.cs" />
+    <Compile Include="Menu\ControlsSettings.xaml.cs">
+      <DependentUpon>ControlsSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\ScoreBoard.xaml.cs">
+      <DependentUpon>ScoreBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreSystem\ScoreSystem.cs" />
+    <Compile Include="Menu\SimpleDialog.xaml.cs">
+      <DependentUpon>SimpleDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnityGame\Actions.cs" />
+    <Compile Include="UnityGame\Components\Camera.cs" />
+    <Compile Include="UnityGame\Components\FieldCollider.cs" />
+    <Compile Include="UnityGame\Components\Field.cs" />
+    <Compile Include="UnityGame\Components\FieldBody.cs" />
+    <Compile Include="UnityGame\GameInitializer.cs" />
+    <Compile Include="UnityGame\GameManager.cs" />
+    <Compile Include="UnityGame\GameObject.cs" />
+    <Compile Include="UnityGame\GhostLoader.cs" />
+    <Compile Include="UnityGame\IComponent.cs" />
+    <Compile Include="UnityGame\IGame.cs" />
+    <Compile Include="UnityGame\Input.cs" />
+    <Compile Include="UnityGame\IntVec2.cs" />
+    <Compile Include="UnityGame\IRenderer.cs" />
+    <Compile Include="UnityGame\LevelLoader.cs" />
+    <Compile Include="UnityGame\Components\Player.cs" />
+    <Compile Include="UnityGame\Game.cs" />
+    <Compile Include="UnityGame\Components\ScoreManager.cs" />
+    <Compile Include="UnityGame\Components\Transform.cs" />
+    <Compile Include="UnityGame\Components\WinLoseChecker.cs" />
+    <Compile Include="UnityGame\Components\PlayerController.cs" />
+    <Compile Include="UnityGame\DirectionUtils.cs" />
+    <Compile Include="UnityGame\Tags.cs" />
+    <Compile Include="UnityRenderers\ElementRenderer.cs" />
+    <Compile Include="UnityRenderers\FinalTextRenderer.cs" />
+    <Compile Include="UnityRenderers\FruitRenderer.cs" />
+    <Compile Include="UnityRenderers\GhostRenderer.cs" />
+    <Compile Include="UnityRenderers\LivesRenderer.cs" />
+    <Compile Include="UnityRenderers\PillRenderer.cs" />
+    <Compile Include="UnityRenderers\PlayerRenderer.cs" />
+    <Compile Include="UnityRenderers\ScoreRenderer.cs" />
+    <Compile Include="UnityRenderers\SuperPillRenderer.cs" />
+    <Compile Include="UnityRenderers\WallRenderer.cs" />
+    <Page Include="Menu\ControlsSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Menu\ScoreBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\SimpleDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Task1Key2.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Cherry-Bonus-icon.png" />
+    <Resource Include="Data\controls.txt" />
+    <Resource Include="Data\highscores.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Levels\level1.txt" />
+    <Resource Include="Data\Levels\level2.txt" />
+    <Resource Include="Data\Levels\level3.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y/e/i $(SolutionDir)Task1\Data $(TargetDir)Data</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
